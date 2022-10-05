@@ -1,2 +1,2 @@
 # case-kpi
-Case FullStack da KPI
+Case FullStack da KPIs
