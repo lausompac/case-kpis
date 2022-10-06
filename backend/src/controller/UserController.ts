@@ -9,7 +9,8 @@ export class UserController {
 
     findUsers = async (req: Request, res: Response) => {
         try {
-            const response = await this.userBusiness.findUsers()
+            const input = req.body.email as string
+            const response = await this.userBusiness.findUsers(input)
 
             res.status(200).send(response)
         } catch (error: unknown) {

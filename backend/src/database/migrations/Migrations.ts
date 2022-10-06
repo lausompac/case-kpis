@@ -45,6 +45,10 @@ class Migrations extends BaseDatabase {
     }
 
     insertData = async () => {
+        //inserido através do arquivo .csv gerado pelo google sheets. No banco de dados, 
+        //utilizado o comando COPY Users FROM 'C:\Users\laura.LAPTOP-93SJ0BMP\OneDrive\Documentos\usuarios.csv' DELIMITER ',' CSV HEADER;
+        //criar um arquivo .csv com os dados da tabela e salvar na pasta do projeto, e um jeito de inserir através da aplicação.
+       
 
     }
 }
