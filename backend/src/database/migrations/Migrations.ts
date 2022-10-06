@@ -1,5 +1,7 @@
+import { USER_STATUS } from "../../models/User";
 import { BaseDatabase } from "../BaseDatabase";
 import { UserDatabase } from "../UserDatabase";
+import { users } from "./data";
 
 
 class Migrations extends BaseDatabase {
@@ -29,11 +31,11 @@ class Migrations extends BaseDatabase {
         DROP TABLE IF EXISTS ${UserDatabase.TABLE_USERS};
 
         CREATE TABLE IF NOT EXISTS Users(
-            matricula varchar(255) PRIMARY KEY,
+            matrícula integer PRIMARY KEY,
             status STATUS NOT NULL,
             nome varchar(255) NOT NULL,
             email varchar(255) NOT NULL UNIQUE,
-            email_gestor varchar(255) NOT NULL,
+            email_gestor varchar(255),
             data_admissao DATE NOT NULL,
             data_rescisao DATE,
             cargo varchar(255) NOT NULL
@@ -43,7 +45,10 @@ class Migrations extends BaseDatabase {
     }
 
     insertData = async () => {
-
+        //inserido através do arquivo .csv gerado pelo google sheets. No banco de dados, 
+        //utilizado o comando COPY Users FROM 'C:\Users\laura.LAPTOP-93SJ0BMP\OneDrive\Documentos\usuarios.csv' DELIMITER ',' CSV HEADER;
+        //criar um arquivo .csv com os dados da tabela e salvar na pasta do projeto, e um jeito de inserir através da aplicação.
+       
 
     }
 }
