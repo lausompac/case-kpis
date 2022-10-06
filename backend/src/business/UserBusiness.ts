@@ -22,7 +22,7 @@ export class UserBusiness {
             throw new NotFoundError("User not found")
         }
 
-        const usersDB = await this.userDatabase.findUsers()
+        const usersDB = await this.userDatabase.findUserByManager(email)
         const users = usersDB.map(user => {
             return {
                 matrícula: user.matrícula,
@@ -35,6 +35,9 @@ export class UserBusiness {
                 cargo: user.cargo
             }
         })
+        
+        const indirects = await this.userDatabase.findUserByManager(users[0].email)
+
 
         const response = {
             users
@@ -65,4 +68,27 @@ export class UserBusiness {
 
         return response
     }
+
+    findInactiveUsers = async () => {
+            
+            const usersDB = await this.userDatabase.findInactiveUsers()
+            const users = usersDB.map(user => {
+                return {
+                    matrícula: user.matrícula,
+                    status: user.status,
+                    nome: user.nome,
+                    email: user.email,
+                    email_gestor: user.email_gestor,
+                    data_admissao: user.data_admissao,
+                    data_rescisao: user.data_rescisao,
+                    cargo: user.cargo
+                }
+            })
+    
+            const response = {
+                users
+            }
+    
+            return response
+        }
 }

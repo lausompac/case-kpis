@@ -8,3 +8,9 @@ Content-Type: application/json
 {
     "email": "daniellewinters@kpis.tech"
 }
+
+### Find Active Users
+GET http://localhost:3003/users/active
+
+### Find Inactive Users
+GET http://localhost:3003/users/inactive
