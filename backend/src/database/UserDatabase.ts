@@ -19,6 +19,7 @@ export class UserDatabase extends BaseDatabase {
         .select("*")
         .where({ email_gestor: email })
 
+
         return usersDB
     }
     

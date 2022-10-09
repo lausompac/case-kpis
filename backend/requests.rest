@@ -6,7 +6,7 @@ GET http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "email": "daniellewinters@kpis.tech"
+    "email": "kathleenroberts@kpis.tech"
 }
 
 ### Find Active Users
