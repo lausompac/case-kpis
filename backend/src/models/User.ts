@@ -9,8 +9,8 @@ export interface IUserDB {
     nome: string,
     email: string,
     email_gestor: string,
-    data_admissao: Date,
-    data_rescisao: Date,
+    data_admissao: string,
+    data_rescisao: string,
     cargo: string
 }
 
@@ -21,8 +21,8 @@ export class User {
         private nome: string,
         private email: string,
         private email_gestor: string,
-        private data_admissao: Date,
-        private data_rescisao: Date,
+        private data_admissao: string,
+        private data_rescisao: string,
         private cargo: string
     ) { }
 
@@ -78,11 +78,11 @@ export class User {
         this.email_gestor = newEmailGestor
     }
 
-    public setDataAdmissao = (newDataAdmissao: Date) => {
+    public setDataAdmissao = (newDataAdmissao: string) => {
         this.data_admissao = newDataAdmissao
     }
 
-    public setDataRescisao = (newDataRescisao: Date) => {
+    public setDataRescisao = (newDataRescisao: string) => {
         this.data_rescisao = newDataRescisao
     }
 
