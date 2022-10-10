@@ -56,8 +56,6 @@ export class UserBusiness {
             ))
         )
 
-        console.log(uniqueUsers.length)
-
         uniqueUsers.sort((a, b) => {
             if (a.matrícula < b.matrícula) {
                 return -1
