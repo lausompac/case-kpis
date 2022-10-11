@@ -62,7 +62,20 @@ https://kpis-deploy.herokuapp.com/users
 5. yarn test
 ```
 
-Crie um arquivo ```.env``` na raiz do projeto e preencha as variáveis com seus dados do banco de dados PostgreSQL. É muito importante para a execução do servidor.
+Crie um arquivo ```.env``` na raiz do projeto e preencha as variáveis com seus dados do banco de dados PostgreSQL e dados do JWT. 
+Essa instrução é fundamental para a execução do servidor.
+
+```
+PORT = 
+DB_HOST = 
+DB_NAME = 
+DB_USER = 
+DB_PASSWORD = 
+
+JWT_KEY = minhasenhasegura1234
+JWT_EXPIRES_IN = 24h
+
+```
 
 
 ## 🛠 Tecnologias utilizadas
