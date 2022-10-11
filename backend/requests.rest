@@ -1,13 +1,19 @@
 ### Ping
 GET http://localhost:3003/
 
-### Find Users
-GET http://localhost:3003/users
+### Login
+POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
     "email": "kathleenroberts@kpis.tech"
 }
+
+
+### Find Users
+GET http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthdGhsZWVucm9iZXJ0c0BrcGlzLnRlY2giLCJpYXQiOjE2NjU1MDI5NDUsImV4cCI6MTY2NTU4OTM0NX0.jSfVI-7FThqELAFY0OTSwSvywyrsfrjuFkef16vp4so
+
 
 ### Find Active Users
 GET http://localhost:3003/users/active

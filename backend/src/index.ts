@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import { pingRouter } from './router/PingRouter'
-import { userRouter } from './router/userRouter'
+import { userRouter } from './router/UserRouter'
 
 const app = express()
 app.use(express.json())
