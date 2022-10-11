@@ -2,26 +2,50 @@ import { UserDatabase } from "../database/UserDatabase";
 import { NotFoundError } from "../errors/NotFoundError";
 import { RequestError } from "../errors/RequestError";
 import { IUserDB } from "../models/User";
+import { Authenticator, ITokenPayload } from "../services/Authenticator";
 
 export class UserBusiness {
     constructor(
         private userDatabase: UserDatabase = new UserDatabase(),
-
+        private authenticator: Authenticator = new Authenticator()
     ) { }
 
-    findUsers = async (input: string) => {
+    login = async (email: string) => {
 
-        const email = input
+        const userDB = await this.userDatabase.verifyUser(email)
 
-        if (!email) {
-            throw new RequestError("Email is required")
-        }
-
-        const isUserValid = await this.userDatabase.verifyUser(email)
-
-        if (!isUserValid) {
+        if (!userDB) {
             throw new NotFoundError("User not found")
         }
+
+        const payload: ITokenPayload = {
+           email
+        }
+
+        const token = this.authenticator.generateToken(payload)
+
+        const response = {
+            message: "User authenticated successfully",
+            token
+        }
+
+        return response
+    }
+
+    findUsers = async (input: string) => {
+        const token = input
+
+        if (!token) {
+            throw new RequestError("Missing Token")
+        }
+
+        const payload = this.authenticator.getTokenPayload(token)
+
+        if (!payload) {
+            throw new RequestError("Invalid Token")
+        }
+
+        const email = payload.email
 
         let allSubordinates: IUserDB[] = []
         const directSubordinatesDB = await this.userDatabase.findUserByManager(email)
