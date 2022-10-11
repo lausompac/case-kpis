@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { BASE_URL } from "../../constants/urls";
-import useRequestData from "../../hooks/useRequestData";
 import { useNavigate } from "react-router-dom";
 import { goToInfos } from "../../routes/coordinator";
 
@@ -20,11 +19,11 @@ function HomeScreen() {
     };
     
     axios
-      .get(`${BASE_URL}`, body)
+      .post(`${BASE_URL}/login`, body)
   
-      console.log(axios)
       .then((response) => {
-        console.log(response.data)
+        localStorage.setItem("token", response.data.token);
+        console.log(response.data.token);
         goToInfos(navigate);
       })
       .catch((error) => {
