@@ -2,20 +2,20 @@
 KPI's Case FullStack
 </h1>
 
-Sistema de gerenciamento para organização de festival de música
-
-Projeto final de backend - Módulo 5 - Labenu
+Case KPI's
 
 ## Sobre o projeto
 
-API REST criada para gerenciar um festival de música. Nessa API, podemos cadastrar usuário, atrações musicais e efetuar reservas de ingressos. 
-O projeto conta com autenticação JWT e Hash de senha, além de testes unitários. 
-A API foi desenvolvida utilizado as tecnologias TYPESCRIPT, NODE.JS, EXPRESS.JS, MYSQL como banco de dados e JEST para testes unitários. Além disso, o projeto foi 
+Backend:
+
+API REST criada para gerenciar um banco de dados de uma empresa. Nessa API, podemos logar e buscar usuários. 
+O projeto conta com autenticação JWT e testes unitários. 
+A API foi desenvolvida utilizado as tecnologias TYPESCRIPT, NODE.JS, EXPRESS.JS, PostgreSQL como banco de dados e JEST para testes unitários. Além disso, o projeto foi 
 estruturado utilizando PROGRAMAÇÃO ORIENTADA A OBJETOS(POO).
 
 ## 📄Documentação
 
-LINK POSTMAN
+https://documenter.getpostman.com/view/15825788/2s83zjtP9Q
 
 Os endpoints também podem ser testados diretamente no projeto através do arquivo ``requests.rest``
 
@@ -23,25 +23,15 @@ Os endpoints também podem ser testados diretamente no projeto através do arqui
 
 https://kpis-deploy.herokuapp.com/users
 
-## ✔️ Features
+## ✔️ Features - Backend
 
-👤 Cadastro/Login
+👤 Login
 
-- [x] O sistema deve permitir o registro de usuário. Para se cadastrar, é necessário fornecer um nome, um email válido e uma senha. Você pode ser um cliente (usuário normal) ou um administrador do sistema (admin). Por padrão, o novo cadastro é registrado como cliente. O login do usuário acontece automaticamente após o cadastro.
-- [x] Para realizar o login, basta informar seu e-mail e a sua senha. O retorno deve conter o token de autenticação do usuário.
+- [x] Para realizar o login, basta informar seu e-mail. O retorno deve conter o token de autenticação do usuário.
 
-🎙 Registrar Atração
+🔎 Busca de Funcionários
 
-- [x] O sistema deve registrar todas as atrações que participarão dos cinco dias de festival. Para uma atração ser criada, é preciso fornecer nome e a data que a mesma se apresentará. Duas Atrações não podem tocar em um mesmo dia. Somente administradores podem registrar atrações.
-
-🎸 Detalhes da Atração
-
-- [x] Cada atração recebe um ID, nome, data e quantidade de ingressos disponíveis. 
-
-🎟️ Reserva de ingressos
-
-- [x] O sistema deve possibilitar a reserva de ingressos. Cada usuários pode reservar apenas 1 ingresso por show.
-- [x] O sistema também deve permitir o cancelamento de reserva. Administradores tem permissão para cancelar qualquer reserva, enquanto cada cliente pode cancelar apenas sua própria compra.
+- [x] O sistema deve buscar todos os funcionários liderados (diretos e indiretos) por quem efetuar o login.
 
 
 <h2 id="back"> 🎲 Rodando o Backend (servidor)</h2>
@@ -49,7 +39,7 @@ https://kpis-deploy.herokuapp.com/users
 ### Pre-Requisitos
 
 - Para rodar o projeto você vai precisar do [Node.JS](https://nodejs.org/en/download/),
-- Uma instancia de um banco de dados MySQL
+- Uma instancia de um banco de dados PostgreSQL
 - Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 ### Como instalar e Rodar
@@ -72,7 +62,7 @@ https://kpis-deploy.herokuapp.com/users
 5. yarn test
 ```
 
-Crie um arquivo ```.env``` na raiz do projeto e preencha as variáveis com seus dados do banco de dados MySQL. É muito importante para a execução do servidor.
+Crie um arquivo ```.env``` na raiz do projeto e preencha as variáveis com seus dados do banco de dados PostgreSQL. É muito importante para a execução do servidor.
 
 
 ## 🛠 Tecnologias utilizadas
@@ -86,7 +76,7 @@ Crie um arquivo ```.env``` na raiz do projeto e preencha as variáveis com seus 
 ## 🚀 Aplicações utilizadas
 
 - VSCode;
-- Beekeeper-Studio;
+- pgAdmin4;
 - Postman;
 
 ## 👨‍💻 Desenvolvedor:
