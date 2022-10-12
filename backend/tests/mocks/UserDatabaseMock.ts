@@ -59,6 +59,16 @@ export class UserDatabaseMock extends BaseDatabase {
                     }
                 ]
 
+            case "clintonhayes@kpis.tech":
+                return []
+
+            case "justinjensen@kpis.tech":
+                return []
+
+            case "michelleflynn@kpis.tech":
+                return []
+
+
             default:
                 return undefined
         }

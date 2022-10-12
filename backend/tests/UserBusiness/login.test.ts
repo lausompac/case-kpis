@@ -18,7 +18,7 @@ describe('Testing Userbusiness', () => {
         expect(response.token).toEqual("token-valido")
     })
 
-    test("Failed login - inavil email", async () => {
+    test("Failed login - User not Found", async () => {
         expect.assertions(2)
 
         try {
@@ -29,6 +29,36 @@ describe('Testing Userbusiness', () => {
             if (error instanceof BaseError) {
                 expect(error.message).toEqual("User not found")
                 expect(error.statusCode).toEqual(404)
+            }
+        }
+    })
+
+    test("Failed login - Invalid email", async () => {
+        expect.assertions(2)
+
+        try {
+            const email = "teste"
+
+            await userBusiness.login(email)
+        } catch (error: unknown) {
+            if (error instanceof BaseError) {
+                expect(error.message).toEqual("Invalid email")
+                expect(error.statusCode).toEqual(400)
+            }
+        }
+    })
+
+    test("Failed login - Missing email", async () => {
+        expect.assertions(2)
+
+        try {
+            const email = ""
+
+            await userBusiness.login(email)
+        } catch (error: unknown) {
+            if (error instanceof BaseError) {
+                expect(error.message).toEqual("Missing email")
+                expect(error.statusCode).toEqual(400)
             }
         }
     })
