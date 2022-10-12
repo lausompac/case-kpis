@@ -1,6 +1,5 @@
 import express from 'express'
 import cors from 'cors'
-import { pingRouter } from './router/PingRouter'
 import { userRouter } from './router/UserRouter'
 
 const app = express()
@@ -11,5 +10,4 @@ app.listen(process.env.PORT || 3003, () => {
     console.log(`Server is running on port ${process.env.PORT || 3003}`)
 })
 
-app.use("/ping", pingRouter)
 app.use("/users", userRouter)

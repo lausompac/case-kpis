@@ -19,7 +19,7 @@ export class UserBusiness {
         }
 
         const payload: ITokenPayload = {
-           email
+            email
         }
 
         const token = this.authenticator.generateToken(payload)
@@ -96,50 +96,5 @@ export class UserBusiness {
 
         return response
     }
-
-    findActiveUsers = async () => {
-
-        const usersDB = await this.userDatabase.findActiveUsers()
-        const users = usersDB.map(user => {
-            return {
-                matrícula: user.matrícula,
-                status: user.status,
-                nome: user.nome,
-                email: user.email,
-                email_gestor: user.email_gestor,
-                data_admissao: user.data_admissao,
-                data_rescisao: user.data_rescisao,
-                cargo: user.cargo
-            }
-        })
-
-        const response = {
-            users
-        }
-
-        return response
-    }
-
-    findInactiveUsers = async () => {
-
-        const usersDB = await this.userDatabase.findInactiveUsers()
-        const users = usersDB.map(user => {
-            return {
-                matrícula: user.matrícula,
-                status: user.status,
-                nome: user.nome,
-                email: user.email,
-                email_gestor: user.email_gestor,
-                data_admissao: user.data_admissao,
-                data_rescisao: user.data_rescisao,
-                cargo: user.cargo
-            }
-        })
-
-        const response = {
-            users
-        }
-
-        return response
-    }
 }
+
