@@ -14,22 +14,26 @@ function HomeScreen() {
     setEmail(event.target.value);
   };
 
-  const onSubmitLogin = () => {
+  const login = async () => {
     const body = {
       email,
     };
 
-    axios
-      .post(`${BASE_URL}/login`, body)
+    try {
+      return await axios.post(`${BASE_URL}/login`, body);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-      .then((response) => {
-        localStorage.setItem("token", response.data.token);
-        console.log(response.data.token);
+  const onSubmitLogin = () => {
+    login()
+      .then((res) => {
+        localStorage.setItem("token", res.data.token);
         goToInfos(navigate);
       })
-      .catch((error) => {
-        console.log(error);
-        alert(error.response.data);
+      .catch((err) => {
+        console.log(err);
       });
   };
 
