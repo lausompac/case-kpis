@@ -3,7 +3,7 @@ import { AuthenticatorMock } from '../mocks/services/AuthenticatorMock'
 import { UserDatabaseMock } from '../mocks/UserDatabaseMock'
 import { BaseError } from '../../src/errors/BaseError'
 
-describe ("Testing UserBusiness", () => {
+describe("Testing UserBusiness", () => {
     const userBusiness = new UserBusiness(
         new UserDatabaseMock(),
         new AuthenticatorMock()
@@ -16,7 +16,6 @@ describe ("Testing UserBusiness", () => {
 
         expect(response.uniqueUsers.length).toEqual(3)
         expect(response.uniqueUsers[0].email).toEqual("clintonhayes@kpis.tech")
-
     })
 
     test("Failed findUsers - Missing token", async () => {

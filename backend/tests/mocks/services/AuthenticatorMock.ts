@@ -5,10 +5,9 @@ export class AuthenticatorMock {
         switch (payload.email) {
             case "kathleenroberts@kpis.tech":
                 return "token-valido"
-                        
+
             default:
                 return "token-invalido"
-
         }
     }
 

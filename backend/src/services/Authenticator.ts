@@ -1,13 +1,10 @@
 import jwt from 'jsonwebtoken'
 import dotenv from "dotenv"
 
-
 dotenv.config()
-
 export interface ITokenPayload {
     email: string
 }
-
 export class Authenticator {
     generateToken = (payload: ITokenPayload): string => {
         const token = jwt.sign(
@@ -17,7 +14,6 @@ export class Authenticator {
                 expiresIn: process.env.JWT_EXPIRES_IN
             }
         )
-
         return token
     }
 

@@ -5,7 +5,7 @@ import { BaseError } from "../errors/BaseError";
 export class UserController {
     constructor(
         private userBusiness = new UserBusiness()
-    ) {}
+    ) { }
 
     login = async (req: Request, res: Response) => {
         try {
@@ -22,7 +22,6 @@ export class UserController {
         }
     }
 
-
     findUsers = async (req: Request, res: Response) => {
         try {
             const input = req.headers.authorization
@@ -31,10 +30,9 @@ export class UserController {
             res.status(200).send(response)
         } catch (error: unknown) {
             if (error instanceof BaseError) {
-               return res.status(error.statusCode).send({ error: error.message })
+                return res.status(error.statusCode).send({ error: error.message })
             }
             res.status(500).send({ error: "Unexpected error ocurred during find users" })
         }
     }
-
 }
