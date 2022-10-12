@@ -17,7 +17,6 @@ export class UserDatabaseMock extends BaseDatabase {
                     data_rescisao: "17/02/2022",
                     cargo: "Designer"
                 }
-
             default:
                 return undefined
         }
@@ -67,7 +66,6 @@ export class UserDatabaseMock extends BaseDatabase {
 
             case "michelleflynn@kpis.tech":
                 return []
-
 
             default:
                 return undefined

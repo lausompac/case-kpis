@@ -6,8 +6,6 @@ Content-Type: application/json
     "email": "kathleenroberts@kpis.tech"
 }
 
-
 ### Find Users
 GET http://localhost:3003/users
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthdGhsZWVucm9iZXJ0c0BrcGlzLnRlY2giLCJpYXQiOjE2NjU1MzI4ODksImV4cCI6MTY2NTYxOTI4OX0.x1E4C-37mqiJVRIzMLvJIpjnKO3d-TsBQK3UoGYj1I0
-

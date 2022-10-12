@@ -61,7 +61,6 @@ export class UserBusiness {
 
         allSubordinates.push(...directSubordinates)
 
-
         const indirectSubordinatesDB = directSubordinates.map(user => this.userDatabase.findUserByManager(user.email))
         const indirectSubordinates = Promise.all(indirectSubordinatesDB).then(subordinate => subordinate)
         const loadList = await indirectSubordinates

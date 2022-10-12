@@ -1,8 +1,6 @@
-import { USER_STATUS } from "../../models/User";
 import { BaseDatabase } from "../BaseDatabase";
 import { UserDatabase } from "../UserDatabase";
 import { users } from "./data";
-
 
 class Migrations extends BaseDatabase {
     execute = async () => {
@@ -45,11 +43,9 @@ class Migrations extends BaseDatabase {
     }
 
     insertData = async () => {
-        //inserido através do arquivo .csv gerado pelo google sheets. No banco de dados, 
-        //utilizado o comando COPY Users FROM 'C:\Users\laura.LAPTOP-93SJ0BMP\OneDrive\Documentos\usuarios.csv' DELIMITER ',' CSV HEADER;
-        //criar um arquivo .csv com os dados da tabela e salvar na pasta do projeto, e um jeito de inserir através da aplicação.
-       
-
+        await BaseDatabase
+            .connection(UserDatabase.TABLE_USERS)
+            .insert(users)
     }
 }
 
