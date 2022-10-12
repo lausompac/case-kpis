@@ -12,6 +12,14 @@ export class UserBusiness {
 
     login = async (email: string) => {
 
+        if (!email) {
+            throw new RequestError("Missing email")
+        }
+
+        if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+            throw new RequestError("Invalid email");
+        }
+
         const userDB = await this.userDatabase.verifyUser(email)
 
         if (!userDB) {
@@ -19,7 +27,7 @@ export class UserBusiness {
         }
 
         const payload: ITokenPayload = {
-           email
+            email
         }
 
         const token = this.authenticator.generateToken(payload)
@@ -36,13 +44,13 @@ export class UserBusiness {
         const token = input
 
         if (!token) {
-            throw new RequestError("Missing Token")
+            throw new RequestError("Missing token")
         }
 
         const payload = this.authenticator.getTokenPayload(token)
 
         if (!payload) {
-            throw new RequestError("Invalid Token")
+            throw new RequestError("Invalid token")
         }
 
         const email = payload.email
@@ -58,6 +66,7 @@ export class UserBusiness {
         const indirectSubordinates = Promise.all(indirectSubordinatesDB).then(subordinate => subordinate)
         const loadList = await indirectSubordinates
         for (let i = 0; i < loadList.length; i++) {
+
             const subordinate = loadList[i].map(sub => sub)
 
             allSubordinates.push(...subordinate)
@@ -96,50 +105,5 @@ export class UserBusiness {
 
         return response
     }
-
-    findActiveUsers = async () => {
-
-        const usersDB = await this.userDatabase.findActiveUsers()
-        const users = usersDB.map(user => {
-            return {
-                matrícula: user.matrícula,
-                status: user.status,
-                nome: user.nome,
-                email: user.email,
-                email_gestor: user.email_gestor,
-                data_admissao: user.data_admissao,
-                data_rescisao: user.data_rescisao,
-                cargo: user.cargo
-            }
-        })
-
-        const response = {
-            users
-        }
-
-        return response
-    }
-
-    findInactiveUsers = async () => {
-
-        const usersDB = await this.userDatabase.findInactiveUsers()
-        const users = usersDB.map(user => {
-            return {
-                matrícula: user.matrícula,
-                status: user.status,
-                nome: user.nome,
-                email: user.email,
-                email_gestor: user.email_gestor,
-                data_admissao: user.data_admissao,
-                data_rescisao: user.data_rescisao,
-                cargo: user.cargo
-            }
-        })
-
-        const response = {
-            users
-        }
-
-        return response
-    }
 }
+

@@ -13,7 +13,7 @@ export class UserDatabase extends BaseDatabase {
         return userDB[0]
     }
     
-    findUserByManager = async (email: string) => {
+    findUserByManager = async (email: string): Promise<IUserDB[] | undefined> => {
         const usersDB: IUserDB[] = await BaseDatabase
         .connection(UserDatabase.TABLE_USERS)
         .select("*")
@@ -22,25 +22,5 @@ export class UserDatabase extends BaseDatabase {
 
         return usersDB
     }
-    
-    findActiveUsers = async () => {
-        const usersDB: IUserDB[] = await BaseDatabase
-        .connection(UserDatabase.TABLE_USERS)
-        .select("*")
-        .where({ status: "ativo" })
-
-        return usersDB
-    }
-
-    findInactiveUsers = async () => {
-        const usersDB: IUserDB[] = await BaseDatabase
-        .connection(UserDatabase.TABLE_USERS)
-        .select("*")
-        .where({ status: "inativo" })
-
-        return usersDB
-    }
-
-
 
 }
