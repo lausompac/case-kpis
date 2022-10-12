@@ -11,7 +11,7 @@ Backend:
 API REST criada para gerenciar um banco de dados de uma empresa. Nessa API, podemos logar e buscar usuários. 
 O projeto conta com autenticação JWT e testes unitários. 
 A API foi desenvolvida utilizado as tecnologias TYPESCRIPT, NODE.JS, EXPRESS.JS, PostgreSQL como banco de dados e JEST para testes unitários. Além disso, o projeto foi 
-estruturado utilizando PROGRAMAÇÃO ORIENTADA A OBJETOS(POO).
+estruturado utilizando PROGRAMAÇÃO ORIENTADA A OBJETOS (POO).
 
 ## 📄Documentação
 
