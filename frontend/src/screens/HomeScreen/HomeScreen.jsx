@@ -3,10 +3,11 @@ import { useState } from "react";
 import { BASE_URL } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
 import { goToInfos } from "../../routes/coordinator";
+import { HomeContainer } from "./styles";
 
 function HomeScreen() {
   const [email, setEmail] = useState("");
-  
+
   const navigate = useNavigate();
 
   const onChangeEmail = (event) => {
@@ -15,34 +16,29 @@ function HomeScreen() {
 
   const onSubmitLogin = () => {
     const body = {
-      email
+      email,
     };
-    
+
     axios
       .post(`${BASE_URL}/login`, body)
-  
+
       .then((response) => {
         localStorage.setItem("token", response.data.token);
         console.log(response.data.token);
         goToInfos(navigate);
       })
       .catch((error) => {
+        console.log(error);
         alert(error.response.data);
       });
-  }
-  
+  };
 
   return (
-    <div>
-      <h1>Seu email</h1>
-      <input
-        type="email"
-        value={email}
-        onChange={onChangeEmail}
-        required
-      />
+    <HomeContainer>
+      <h2>Seu email</h2>
+      <input type="email" value={email} onChange={onChangeEmail} required />
       <button onClick={onSubmitLogin}>OK</button>
-    </div>
+    </HomeContainer>
   );
 }
 
