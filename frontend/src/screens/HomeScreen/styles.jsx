@@ -13,19 +13,6 @@ export const HomeContainer = styled.div`
     margin-bottom: 10px;
   }
 
-  input {
-    width: 250px;
-    height: 40px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding: 0 10px;
-    margin-bottom: 10px;
-    
-    :focus {
-      outline: 1px solid gray;
-    }
-  }
-
   button {
     width: 40px;
     height: 25px;
@@ -37,7 +24,10 @@ export const HomeContainer = styled.div`
     :hover {
       background-color: #e6e6e6;
     }
-    
   }
 
+  p {
+    margin-top: 10px;
+    color: red;
+  }
 `;

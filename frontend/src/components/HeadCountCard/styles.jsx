@@ -7,8 +7,7 @@ export const HeadCountContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 35vw;
-  padding: 5vw 2vw;
-
+  padding: 1vw 2vw;
   background-color: #f2f2f2;
 
 `;

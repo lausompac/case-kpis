@@ -32,7 +32,7 @@ export const TurnOverCard = (users) => {
 
   return (
     <TurnOverContainer>
-      <h2>Evolução de Turnover</h2>
+      <h2>Desligamentos</h2>
       <Graphic data={data} />
     </TurnOverContainer>
   );
