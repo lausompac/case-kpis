@@ -7,6 +7,7 @@ import { HomeContainer } from "./styles";
 
 function HomeScreen() {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ function HomeScreen() {
     try {
       return await axios.post(`${BASE_URL}/login`, body);
     } catch (error) {
-      console.log(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -32,8 +33,8 @@ function HomeScreen() {
         localStorage.setItem("token", res.data.token);
         goToInfos(navigate);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        return error
       });
   };
 
@@ -42,6 +43,9 @@ function HomeScreen() {
       <h2>Seu email</h2>
       <input type="email" value={email} onChange={onChangeEmail} required />
       <button onClick={onSubmitLogin}>OK</button>
+      <p value={error} onChange={(e) => setError(e.target.value)}>
+        {error}
+      </p>
     </HomeContainer>
   );
 }

@@ -1,20 +1,7 @@
 import { Graphic } from "./Graphic";
-import styled from "styled-components";
 import { useEffect } from "react";
 import { useOrdenatedUsersPerDate } from "../hooks/useOrdenatedUsersPerDate";
-
-const HeadCountContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 35vw;
-  padding: 5vw 2vw;
-
-  background-color: #f2f2f2;
-
-`;
+import { HeadCountContainer } from "./styles";
 
 export const HeadCountCard = (users) => {
   useEffect(() => {

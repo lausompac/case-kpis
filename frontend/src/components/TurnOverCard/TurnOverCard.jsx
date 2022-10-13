@@ -1,18 +1,8 @@
 import { useEffect } from "react";
-import styled from "styled-components";
-import { useOrdenatedUsersPerDate } from "../hooks/useOrdenatedUsersPerDate";
-import { Graphic } from "./Graphic";
+import { useOrdenatedUsersPerDate } from "../../hooks/useOrdenatedUsersPerDate";
+import { Graphic } from "../Graphic";
+import { TurnOverContainer } from "./styles";
 
-const TurnOverContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 35vw;
-  padding: 5vw 2vw;
-  background-color: #f2f2f2;
-`;
 export const TurnOverCard = (users) => {
   useEffect(() => {
     users;

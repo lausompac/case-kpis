@@ -1,20 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HeadCountCard } from "../../components/HeadCountCard";
-import { TurnOverCard } from "../../components/TurnOverCard";
+import { TurnOverCard } from "../../components/TurnOverCard/TurnOverCard";
 import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPages";
-import styled from "styled-components";
+import { InfosContainer } from "./styles";
 
-const InfosContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  
-`;
 
 function InfoScreen() {
   useProtectedPage();
@@ -42,10 +33,10 @@ function InfoScreen() {
   };
 
   return (
-    <div>
+    <InfosContainer>
       <HeadCountCard users={users} />
       <TurnOverCard users={users} />
-    </div>
+    </InfosContainer>
   );
 }
 
