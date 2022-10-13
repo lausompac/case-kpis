@@ -10,5 +10,4 @@ export const HeadCountContainer = styled.div`
   padding: 5vw 2vw;
 
   background-color: #f2f2f2;
-
 `;

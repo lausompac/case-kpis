@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { HeadCountCard } from "../../components/HeadCountCard";
+import { HeadCountCard } from "../../components/HeadCountCard/HeadCountCard";
+
 import { TurnOverCard } from "../../components/TurnOverCard/TurnOverCard";
 import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPages";
 import { InfosContainer } from "./styles";
-
 
 function InfoScreen() {
   useProtectedPage();
@@ -24,11 +24,10 @@ function InfoScreen() {
         },
       })
       .then((response) => {
-        console.log(response.data.uniqueUsers);
         setUsers(response.data.uniqueUsers);
       })
       .catch((error) => {
-        console.log(error.response.data);
+        return error.response.data;
       });
   };
 

@@ -34,7 +34,7 @@ function HomeScreen() {
         goToInfos(navigate);
       })
       .catch((error) => {
-        return error
+        return error;
       });
   };
 

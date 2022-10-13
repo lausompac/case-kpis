@@ -5,10 +5,10 @@ import InfoScreen from "../screens/InfoScreen/InfoScreen";
 export default function Router() {
   return (
     <BrowserRouter>
-    <Routes>
-    <Route path="/" element={<HomeScreen />} />
-    <Route path="/infos" element={<InfoScreen />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/infos" element={<InfoScreen />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }

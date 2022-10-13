@@ -20,7 +20,7 @@ export const HomeContainer = styled.div`
     border-radius: 10px;
     padding: 0 10px;
     margin-bottom: 10px;
-    
+
     :focus {
       outline: 1px solid gray;
     }
@@ -37,7 +37,10 @@ export const HomeContainer = styled.div`
     :hover {
       background-color: #e6e6e6;
     }
-    
   }
 
+  p {
+    margin-top: 10px;
+    color: red;
+  }
 `;
