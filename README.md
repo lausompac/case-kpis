@@ -21,7 +21,8 @@ Os endpoints também podem ser testados diretamente no projeto através do arqui
 
 ## 🚀 Deploy
 
-https://kpis-deploy.herokuapp.com/users
+Backend: https://kpis-deploy.herokuapp.com/users
+Frontend: 
 
 ## ✔️ Features - Backend
 
