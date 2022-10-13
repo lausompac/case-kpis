@@ -1,6 +1,7 @@
-import { Graphic } from "./Graphic";
 import { useEffect } from "react";
-import { useOrdenatedUsersPerDate } from "../hooks/useOrdenatedUsersPerDate";
+import { useOrdenatedUsersPerDate } from "../../hooks/useOrdenatedUsersPerDate";
+import { Graphic } from "../Graphic";
+
 import { HeadCountContainer } from "./styles";
 
 export const HeadCountCard = (users) => {

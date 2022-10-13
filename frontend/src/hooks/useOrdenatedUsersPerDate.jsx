@@ -26,16 +26,14 @@ export const useOrdenatedUsersPerDate = (array) => {
     return acc;
   }, []);
 
-  const ordenatedUsers = Object.entries(usersPerMonth).sort(
-    (a, b) => {
-      const [monthA, yearA] = a[0].split("/");
-      const [monthB, yearB] = b[0].split("/");
-      if (yearA !== yearB) {
-        return yearA - yearB;
-      }
-      return monthA - monthB;
+  const ordenatedUsers = Object.entries(usersPerMonth).sort((a, b) => {
+    const [monthA, yearA] = a[0].split("/");
+    const [monthB, yearB] = b[0].split("/");
+    if (yearA !== yearB) {
+      return yearA - yearB;
     }
-  );
+    return monthA - monthB;
+  });
 
   return ordenatedUsers;
 };
