@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { HeadCountCard } from "../../components/HeadCountCard";
+import { HeadCountCard } from "../../components/HeadCountCard/HeadCountCard";
 import { TurnOverCard } from "../../components/TurnOverCard/TurnOverCard";
 import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPages";
@@ -11,10 +11,15 @@ function InfoScreen() {
   useProtectedPage();
 
   const [users, setUsers] = useState([]);
+  const [year, setYear] = useState("2022");
 
   useEffect(() => {
     getUsers();
   }, []);
+
+  const handleYear = (event) => {
+    setYear(event.target.value);
+  };
 
   const getUsers = () => {
     axios
@@ -24,7 +29,6 @@ function InfoScreen() {
         },
       })
       .then((response) => {
-        console.log(response.data.uniqueUsers);
         setUsers(response.data.uniqueUsers);
       })
       .catch((error) => {
@@ -34,8 +38,15 @@ function InfoScreen() {
 
   return (
     <InfosContainer>
-      <HeadCountCard users={users} />
-      <TurnOverCard users={users} />
+      <select onChange={handleYear}>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+      </select>
+
+      <HeadCountCard users={users} year={year} />
+      <TurnOverCard users={users} year={year} />
     </InfosContainer>
   );
 }

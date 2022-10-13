@@ -4,6 +4,8 @@ import { BASE_URL } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
 import { goToInfos } from "../../routes/coordinator";
 import { HomeContainer } from "./styles";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 function HomeScreen() {
   const [email, setEmail] = useState("");
@@ -34,14 +36,29 @@ function HomeScreen() {
         goToInfos(navigate);
       })
       .catch((error) => {
-        return error
+        return error;
       });
   };
 
   return (
     <HomeContainer>
       <h2>Seu email</h2>
-      <input type="email" value={email} onChange={onChangeEmail} required />
+      <Box
+        component="form"
+        sx={{
+          "& .MuiTextField-root": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          required
+          id="outlined-required"
+          label="Insira seu email"
+          value={email}
+          onChange={onChangeEmail}
+        />
+      </Box>
       <button onClick={onSubmitLogin}>OK</button>
       <p value={error} onChange={(e) => setError(e.target.value)}>
         {error}
