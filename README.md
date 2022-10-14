@@ -113,7 +113,7 @@ Aplicação que exibe o Headcount e o Turnover de uma empresa. Na primeira pági
 ```
 1. git clone https://github.com/lausompac/case-kpi.git
 2. cd case-kpi
-3. cd backend
+3. cd frontend
 ```
 * Para instalar e rodar o projeto
 ```
