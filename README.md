@@ -4,6 +4,8 @@ KPI's Case FullStack
 
 Case KPI's
 
+OBS: No pull request aberto contém código com a lógica de headcount não implementada pela falta de tempo
+
 ## 🚀 Deploy
 
 Backend: https://kpis-deploy.herokuapp.com/users
