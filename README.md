@@ -4,9 +4,14 @@ KPI's Case FullStack
 
 Case KPI's
 
-## Sobre o projeto
+## 🚀 Deploy
 
-Backend:
+Backend: https://kpis-deploy.herokuapp.com/users
+Frontend: https://kpis-deploy.surge.sh/
+
+
+## ⬅️ Backend
+### Sobre o projeto 
 
 API REST criada para gerenciar um banco de dados de uma empresa. Nessa API, podemos logar e buscar usuários. 
 O projeto conta com autenticação JWT e testes unitários. 
@@ -19,13 +24,7 @@ https://documenter.getpostman.com/view/15825788/2s83zjtP9Q
 
 Os endpoints também podem ser testados diretamente no projeto através do arquivo ``requests.rest``
 
-## 🚀 Deploy
-
-Backend: https://kpis-deploy.herokuapp.com/users
-
-Frontend: https://kpis-deploy.surge.sh/
-
-## ✔️ Features - Backend
+## ✔️ Features
 
 👤 Login
 
@@ -40,7 +39,7 @@ Frontend: https://kpis-deploy.surge.sh/
 
 ### Pre-Requisitos
 
-- Para rodar o projeto você vai precisar do [Node.JS](https://nodejs.org/en/download/),
+- Para rodar o projeto você vai precisar do [Node.JS](https://nodejs.org/en/download/)
 - Uma instancia de um banco de dados PostgreSQL
 - Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
@@ -49,19 +48,20 @@ Frontend: https://kpis-deploy.surge.sh/
 ```
 1. git clone https://github.com/lausompac/case-kpi.git
 2. cd case-kpi
+3. cd backend
 ```
 * Para instalar e rodar o projeto
 ```
-3. npm install
-4. npm dev
+4. npm install
+5. npm dev
     ou
-3. yarn install
-4. yarn dev
+4. yarn install
+5. yarn dev
 ```
 * Para rodar os testes 
 ```
-5. npm test
-5. yarn test
+6. npm test
+6. yarn test
 ```
 
 Crie um arquivo ```.env``` na raiz do projeto e preencha as variáveis com seus dados do banco de dados PostgreSQL e dados do JWT. 
@@ -82,15 +82,46 @@ JWT_EXPIRES_IN = 24h
 
 ## 🛠 Tecnologias utilizadas
 
-### Backend
-
 - Typescript;
 - Express;
 - Cors;
 - Knex; 
 - SQL
 
-### Frontend
+## 🚀 Aplicações utilizadas
+
+- VSCode;
+- pgAdmin4;
+- Postman;
+
+## ➡️ Frontend
+
+### Sobre o projeto
+
+Aplicação que exibe o Headcount e o Turnover de uma empresa. Na primeira página o usuários efetua seu login. Na página seguinte são exibidos gráficos que representam a média de Headcount e Turnover dos liderados diretos e indiretos do usuário logado. A aplicação foi desenvolvida em React.
+
+##  🎲 Rodando o Frontend
+
+- Para rodar o projeto você vai precisar do [Node.JS](https://nodejs.org/en/download/)
+- Um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+### Como instalar e Rodar
+* Para baixar o projeto
+```
+1. git clone https://github.com/lausompac/case-kpi.git
+2. cd case-kpi
+3. cd backend
+```
+* Para instalar e rodar o projeto
+```
+4. npm install
+5. npm dev
+    ou
+4. yarn install
+5. yarn dev
+```
+
+## 🛠 Tecnologias utilizadas
 
 - React
 
@@ -101,11 +132,6 @@ JWT_EXPIRES_IN = 24h
   - [styled-components](https://styled-components.com/)
   - [nivo.rocks](https://nivo.rocks/)
 
-## 🚀 Aplicações utilizadas
-
-- VSCode;
-- pgAdmin4;
-- Postman;
 
 ## 👨‍💻 Desenvolvedor:
 
