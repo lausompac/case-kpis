@@ -22,7 +22,7 @@ Os endpoints também podem ser testados diretamente no projeto através do arqui
 ## 🚀 Deploy
 
 Backend: https://kpis-deploy.herokuapp.com/users
-Frontend: 
+Frontend: https://kpis-deploy.surge.sh/
 
 ## ✔️ Features - Backend
 
@@ -81,11 +81,24 @@ JWT_EXPIRES_IN = 24h
 
 ## 🛠 Tecnologias utilizadas
 
+### Backend
+
 - Typescript;
 - Express;
 - Cors;
 - Knex; 
 - SQL
+
+### Frontend
+
+- React
+
+#### :books: Bibliotecas utilizadas:
+  - [axios](https://github.com/axios/axios)
+  - [material-ui](https://mui.com/pt/)
+  - [react-router-dom](https://v5.reactrouter.com/)
+  - [styled-components](https://styled-components.com/)
+  - [nivo.rocks](https://nivo.rocks/)
 
 ## 🚀 Aplicações utilizadas
 
